@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/AStar.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/pixilart-drawing(1).png" type="Texture" id=3]
+[ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.317016, 1.06171, 1 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Floor" type="StaticBody" parent="." groups=["Walkable"]]
+transform = Transform( 18.0524, 0, 0, 0, 0.125207, 0, 0, 0, 18.0524, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+shape = SubResource( 2 )
+
+[node name="Player" type="KinematicBody" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
+transform = Transform( 11.3876, 0, 0, 0, 11.3876, 0, 0, 0, 11.3876, 0, 0.64441, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.500421, 0, 0, 0, 0.26257, 0, 0.662908, 0 )
+shape = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.921572, 0.388207, 0, -0.388207, 0.921572, -0.0728136, 5.46619, 4.68358 )
+
+[node name="AStar" type="Spatial" parent="."]
+script = ExtResource( 1 )
+show_nav_cubes = true
+
+[node name="PlayerController" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="Marker" type="Spatial" parent="PlayerController"]
