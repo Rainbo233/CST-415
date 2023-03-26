@@ -17,4 +17,12 @@ do not have Godot installed on your computer.
 
 I have also attatched two executable files for the project,
 one for Windows and another for Linux, whichever you prefer.
+To run them, all you need to do is extract the file onto
+the desktop and run it, or enter it on the command line when
+going to the folder you extracted it to.
+
+Do note that you will not get the output terminal as shown
+in the video, for that you will need the Godot Engine as it
+uses it's output terminal to do. But the video shows it
+working just fine so that part is unneccessary.
 
