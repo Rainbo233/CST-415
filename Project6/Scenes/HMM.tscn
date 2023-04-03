@@ -1,0 +1,193 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/HMM.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://font.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="HMM" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colors" type="Node2D" parent="."]
+position = Vector2( 0, 15 )
+
+[node name="Red" type="Area2D" parent="Colors"]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 288, 160 )
+
+[node name="ForwardLabel" type="Label" parent="Colors/Red"]
+margin_left = -48.0
+margin_top = -61.0
+margin_right = -8.0
+margin_bottom = -35.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackwardLabel" type="Label" parent="Colors/Red"]
+margin_left = -48.0
+margin_top = 35.0
+margin_right = -8.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Colors/Red"]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colors/Red"]
+shape = SubResource( 1 )
+
+[node name="Blue" type="Area2D" parent="Colors"]
+modulate = Color( 0, 0.929412, 1, 1 )
+self_modulate = Color( 0, 1, 1, 1 )
+position = Vector2( 736, 160 )
+
+[node name="ForwardLabel" type="Label" parent="Colors/Blue"]
+margin_left = -48.0
+margin_top = -61.0
+margin_right = -8.0
+margin_bottom = -35.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackwardLabel" type="Label" parent="Colors/Blue"]
+margin_left = -48.0
+margin_top = 35.0
+margin_right = -8.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Colors/Blue"]
+self_modulate = Color( 0, 0.0156863, 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colors/Blue"]
+shape = SubResource( 1 )
+
+[node name="Green" type="Area2D" parent="Colors"]
+modulate = Color( 0.101961, 1, 0, 1 )
+self_modulate = Color( 0, 1, 0.0627451, 1 )
+position = Vector2( 288, 416 )
+
+[node name="ForwardLabel" type="Label" parent="Colors/Green"]
+margin_left = -48.0
+margin_top = -61.0
+margin_right = -8.0
+margin_bottom = -35.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackwardLabel" type="Label" parent="Colors/Green"]
+margin_left = -48.0
+margin_top = 35.0
+margin_right = -8.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Colors/Green"]
+modulate = Color( 0, 1, 0.180392, 1 )
+self_modulate = Color( 0, 1, 0.203922, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colors/Green"]
+shape = SubResource( 1 )
+
+[node name="Yellow" type="Area2D" parent="Colors"]
+modulate = Color( 1, 0.866667, 0, 1 )
+self_modulate = Color( 0.992157, 1, 0, 1 )
+position = Vector2( 736, 416 )
+
+[node name="ForwardLabel" type="Label" parent="Colors/Yellow"]
+margin_left = -48.0
+margin_top = -61.0
+margin_right = -8.0
+margin_bottom = -35.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackwardLabel" type="Label" parent="Colors/Yellow"]
+margin_left = -48.0
+margin_top = 35.0
+margin_right = -8.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Colors/Yellow"]
+modulate = Color( 0.968627, 1, 0, 1 )
+self_modulate = Color( 0.992157, 1, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colors/Yellow"]
+shape = SubResource( 1 )
+
+[node name="InfoLabel" type="Label" parent="."]
+margin_left = 339.0
+margin_top = 280.0
+margin_right = 379.0
+margin_bottom = 306.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="Colors/Red" to="." method="_on_Red_mouse_entered"]
+[connection signal="mouse_entered" from="Colors/Blue" to="." method="_on_Blue_mouse_entered"]
+[connection signal="mouse_entered" from="Colors/Green" to="." method="_on_Green_mouse_entered"]
+[connection signal="mouse_entered" from="Colors/Yellow" to="." method="_on_Yellow_mouse_entered"]
