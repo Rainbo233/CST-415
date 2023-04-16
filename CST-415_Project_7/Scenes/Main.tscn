@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Stock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://KiriFont.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+extra_spacing_char = 13
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 29
+extra_spacing_char = 13
+font_data = ExtResource( 3 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1016.0
+margin_bottom = 600.0
+color = Color( 0.129412, 0.129412, 0.129412, 1 )
+
+[node name="CashLabel" type="Label" parent="Background"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -93.0
+margin_bottom = -63.0
+custom_fonts/font = SubResource( 1 )
+text = "Current Cash: $10000"
+align = 1
+
+[node name="ResultsLabel" type="Label" parent="Background"]
+anchor_right = 1.0
+margin_top = 65.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+text = "Goal: Reach 50000!"
+align = 1
+
+[node name="Stock1" type="Control" parent="."]
+margin_left = 64.0
+margin_top = 168.0
+margin_right = 512.0
+margin_bottom = 424.0
+
+[node name="ColorRect" type="ColorRect" parent="Stock1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0980392, 0, 0, 1 )
+
+[node name="Stock" parent="Stock1" instance=ExtResource( 1 )]
+margin_left = -143.276
+margin_top = -71.68
+margin_right = -143.276
+margin_bottom = -71.4801
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Stock2" type="Control" parent="."]
+margin_left = 512.0
+margin_top = 168.0
+margin_right = 960.0
+margin_bottom = 424.0
+
+[node name="ColorRect2" type="ColorRect" parent="Stock2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0196078, 0, 0.0980392, 1 )
+
+[node name="Stock2" parent="Stock2" instance=ExtResource( 1 )]
+margin_left = -143.276
+margin_top = -71.68
+margin_right = -143.276
+margin_bottom = -71.4801
+__meta__ = {
+"_edit_use_anchors_": true
+}
